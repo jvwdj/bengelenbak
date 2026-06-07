@@ -1,0 +1,46 @@
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="PLACEHOLDER_HOME" style="text-decoration: none; color: inherit;">
+                <div class="logo">
+                    <img src="PLACEHOLDER_LOGO" alt="Bengelenbak Logo">
+                    <div>
+                        <h1>De Bengelenbak</h1>
+                        <p class="tagline">Peuterspeelzaal</p>
+                    </div>
+                </div>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <a href="PLACEHOLDER_HOME" id="nav-home">Home</a>
+                <a href="PLACEHOLDER_PAGE_organisatie" id="nav-organisatie">Organisatie</a>
+                <a href="PLACEHOLDER_PAGE_missie" id="nav-missie">Missie en visie</a>
+                <a href="PLACEHOLDER_PAGE_aanmelding" id="nav-aanmelding">Aanmelding & plaatsing</a>
+                <a href="PLACEHOLDER_PAGE_werkwijze" id="nav-werkwijze">Werkwijze</a>
+                <a href="PLACEHOLDER_PAGE_ouderpagina" id="nav-ouderpagina">Ouderpagina</a>
+                <a href="PLACEHOLDER_PAGE_contact" id="nav-contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
