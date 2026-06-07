@@ -710,13 +710,14 @@ p {
         max-height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+        transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
     }
 
     .nav.active {
         max-height: 500px;
         opacity: 1;
         padding: 15px;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
     }
 
     .nav a {
