@@ -11,7 +11,8 @@ const paths = {
     aanmelding: isHomepage ? 'pages/aanmelding.html' : 'aanmelding.html',
     werkwijze: isHomepage ? 'pages/werkwijze.html' : 'werkwijze.html',
     ouderpagina: isHomepage ? 'pages/ouderpagina.html' : 'ouderpagina.html',
-    contact: isHomepage ? 'pages/contact.html' : 'contact.html'
+    contact: isHomepage ? 'pages/contact.html' : 'contact.html',
+    cookie: isHomepage ? 'pages/cookie-policy.html' : 'cookie-policy.html'
 };
 
 // Get current page name
@@ -32,9 +33,31 @@ async function loadHeader() {
                    .replace(/PLACEHOLDER_PAGE_aanmelding/g, paths.aanmelding)
                    .replace(/PLACEHOLDER_PAGE_werkwijze/g, paths.werkwijze)
                    .replace(/PLACEHOLDER_PAGE_ouderpagina/g, paths.ouderpagina)
-                   .replace(/PLACEHOLDER_PAGE_contact/g, paths.contact);
+                   .replace(/PLACEHOLDER_PAGE_contact/g, paths.contact)
+                   .replace(/PLACEHOLDER_PAGE_cookie/g, paths.cookie);
 
         document.body.insertAdjacentHTML('afterbegin', html);
+
+        // Initialize hamburger menu
+        setTimeout(() => {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    });
+                });
+            }
+        }, 0);
 
         // Set active nav item
         const navItems = {
