@@ -109,8 +109,11 @@ async function loadFooter() {
         const response = await fetch(footerPath);
         const html = await response.text();
         document.body.insertAdjacentHTML('beforeend', html);
+        // Trigger fade-in animation after footer is loaded
+        document.body.classList.add('loaded');
     } catch (e) {
         console.error('Failed to load footer:', e);
+        document.body.classList.add('loaded');
     }
 }
 

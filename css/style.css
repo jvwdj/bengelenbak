@@ -6,6 +6,29 @@
     box-sizing: border-box;
 }
 
+/* Page fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    opacity: 0;
+}
+
+body.loaded main {
+    animation: fadeIn 0.2s forwards;
+}
+
+
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.7;
