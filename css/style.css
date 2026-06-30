@@ -372,6 +372,39 @@ p {
     flex: 1;
 }
 
+/* Times list styling */
+.times-list .time-row {
+    display: inline-grid;
+    grid-template-columns: 90px auto;
+    gap: 0 50px;
+    width: 100%;
+}
+
+.times-list .time-label {
+    text-align: left;
+}
+
+.times-list .time-value {
+    text-align: left;
+}
+
+/* Hours list styling */
+.hours-list .hours-row {
+    display: inline-grid;
+    grid-template-columns: 120px auto;
+    gap: 0 50px;
+    width: 100%;
+}
+
+.hours-list .hours-label {
+    text-align: left;
+    font-weight: 600;
+}
+
+.hours-list .hours-value {
+    text-align: left;
+}
+
 .info-section.two-column h3 {
     margin-top: 0;
 }
