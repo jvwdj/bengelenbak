@@ -16,11 +16,12 @@
     }
 }
 
-main {
+main, .hero {
     opacity: 0;
 }
 
-body.loaded main {
+body.loaded main,
+body.loaded .hero {
     animation: fadeIn 0.2s forwards;
 }
 
