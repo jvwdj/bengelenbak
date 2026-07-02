@@ -1,11 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/organisatie", "destination": "/pages/organisatie.html" },
-    { "source": "/missie-en-visie", "destination": "/pages/missie.html" },
-    { "source": "/aanmelding", "destination": "/pages/aanmelding.html" },
-    { "source": "/werkwijze", "destination": "/pages/werkwijze.html" },
-    { "source": "/ouderpagina", "destination": "/pages/ouderpagina.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" },
-    { "source": "/cookie-policy", "destination": "/pages/cookie-policy.html" }
-  ]
+  "rewrites": []
 }
