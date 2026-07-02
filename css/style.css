@@ -536,6 +536,18 @@ p {
     text-decoration: underline;
 }
 
+/* Section Images */
+.section-image {
+    max-width: 500px;
+    height: auto;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(224, 153, 1, 0.2);
+    border: 3px solid #E9B52B;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Footer */
 .footer {
     background: #1a1a1a;
