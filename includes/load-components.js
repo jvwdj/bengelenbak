@@ -1,8 +1,9 @@
 // Detect if we're on homepage or subpage
-const isSubpage = window.location.pathname.includes('/pages/');
+const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+const isSubpage = !isHomepage;
 
 // Get current page name
-const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+const currentPage = window.location.pathname.split('/').filter(Boolean)[0] || 'index';
 
 // Initialize navigation (header is now inline in HTML)
 function initNavigation() {

@@ -11,7 +11,7 @@
     <!-- Header & Navigation -->
     <header class="header">
         <div class="container">
-            <a href="../index.html" style="text-decoration: none; color: inherit;">
+            <a href="/" style="text-decoration: none; color: inherit;">
                 <div class="logo">
                     <img src="../logo_transparant.svg" alt="Bengelenbak Logo" class="logo-img">
                     <div>
@@ -26,13 +26,13 @@
                 <span></span>
             </button>
             <nav class="nav" id="nav-menu">
-                <a href="../index.html" id="nav-home">Home</a>
-                <a href="organisatie.html" id="nav-organisatie">Organisatie</a>
-                <a href="missie.html" id="nav-missie">Missie en visie</a>
-                <a href="aanmelding.html" id="nav-aanmelding">Aanmelding & plaatsing</a>
-                <a href="werkwijze.html" id="nav-werkwijze">Werkwijze</a>
-                <a href="ouderpagina.html" id="nav-ouderpagina">Ouderpagina</a>
-                <a href="contact.html" id="nav-contact">Contact</a>
+                <a href="/" id="nav-home">Home</a>
+                <a href="/organisatie" id="nav-organisatie">Organisatie</a>
+                <a href="/missie-en-visie" id="nav-missie">Missie en visie</a>
+                <a href="/aanmelding" id="nav-aanmelding">Aanmelding & plaatsing</a>
+                <a href="/werkwijze" id="nav-werkwijze">Werkwijze</a>
+                <a href="/ouderpagina" id="nav-ouderpagina">Ouderpagina</a>
+                <a href="/contact" id="nav-contact">Contact</a>
             </nav>
         </div>
     </header>
@@ -57,21 +57,47 @@
             </p>
 
             <h3>Contact opnemen</h3>
-            <form action="#" method="POST">
+            <form id="contact-form">
                 <div class="form-group">
                     <label for="name">Naam:</label>
                     <input type="text" id="name" name="name" required>
-                </div></a>
+                </div>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" required>
-                </div></a>
+                </div>
                 <div class="form-group">
                     <label for="message">Bericht:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-                </div></a>
+                </div>
                 <button type="submit" class="cta-button">Verstuur</button>
             </form>
+            <div id="thank-you-message" style="display: none; text-align: center; padding: 40px 0;">
+                <p style="font-size: 1.2em; color: #E09901; font-weight: 600;">Bedankt! We nemen zo snel mogelijk contact op.</p>
+            </div>
+
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(this);
+
+                    fetch('https://formspree.io/f/xgojpyqr', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('contact-form').style.display = 'none';
+                            document.getElementById('thank-you-message').style.display = 'block';
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                });
+            </script>
         </section>
     </main>
 
