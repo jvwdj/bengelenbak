@@ -164,7 +164,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: url('../css/2.png') center top / cover no-repeat;
+    background: url('../css/fold-picture-new.jpg') center 75% / cover no-repeat;
     color: white;
     padding: 200px 20px;
     text-align: center;
@@ -1286,5 +1286,12 @@ p {
 
     section {
         margin-bottom: 40px;
+    }
+}
+
+/* Hero foto positie op grote schermen */
+@media (min-width: 1601px) {
+    .hero {
+        background-position: center 55%;
     }
 }
